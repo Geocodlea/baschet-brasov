@@ -29,9 +29,9 @@ async function initMap() {
   });
 
   const markerPin = document.createElement("img");
-  markerPin.src = "./pin.png";
-  markerPin.width = 75;
-  markerPin.height = 75;
+  markerPin.src = "/wp-content/uploads/2023/10/pin.png";
+  markerPin.width = 50;
+  markerPin.height = 50;
 
   const marker = new AdvancedMarkerElement({
     map,

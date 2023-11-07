@@ -35,10 +35,10 @@ async function initMap() {
       )
       .map((markerData, index) => {
         const contentMarker = document.createElement("div");
-        contentMarker.innerHTML = `<div id=pin-${index} style="display: block"><img src="./pin.png" width=35 height=35 alt="baschet pin" /></div>
-                                   <div id=popup-${index} style="display: none; background: white; padding: 2rem; text-align: center; font-size: 2rem;">
+        contentMarker.innerHTML = `<div id=pin-${index} style="display: block"><img src="/wp-content/uploads/2023/10/pin.png" width=35 height=35 alt="baschet pin" /></div>
+                                   <div id=popup-${index} style="display: none; background: white; padding: 2rem; text-align: center; font-size: 1.5rem;">
                                       <h3 style="margin-bottom: 10px; ">${markerData.name}</h3>
-                                      <a href="/teren-de-baschet/teren?teren=${markerData.name}&lat=${markerData.coordinates.latitude}&lng=${markerData.coordinates.longitude}&type=${markerData.courtType}"  style="text-decoration: none; font-weight: bold">VEZI DETALII TEREN</a>
+                                      <a href="/teren-de-baschet/teren?teren=${markerData.name}&lat=${markerData.coordinates.latitude}&lng=${markerData.coordinates.longitude}&type=${markerData.courtType}" style="text-decoration: none; font-weight: bold;">VEZI DETALII TEREN</a>
                                    </div>`;
 
         const marker = new AdvancedMarkerElement({

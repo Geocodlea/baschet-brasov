@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 950px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdb516;
+  border-radius: 20px;
+  padding: 25px 0;
+}
+
+.row {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 550px) {
+  .row {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.topFilter {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+@media screen and (max-width: 550px) {
+  .topFilter {
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+
+.bottomFilter {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+
+@media screen and (max-width: 550px) {
+  .bottomFilter {
+    gap: 0 10px;
+    height: fit-content;
+    flex-wrap: wrap;
+  }
+}
+
+.errorMessage {
+  color: #613069;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 550px) {
+  .errorMessage {
+    font-size: 0.8rem;
+  }
+}

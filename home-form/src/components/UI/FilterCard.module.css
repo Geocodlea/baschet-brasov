@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  background-color: #f2e2cc;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    width: auto;
+    height: 30px;
+    padding: 2px 8px;
+    font-size: 18px;
+  }
+}
+
+.container p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #613069;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 550px) {
+  .container p {
+    font-size: 0.85rem;
+  }
+}
+
+.container svg {
+  margin-left: 10px;
+  height: 23px;
+  color: #613069;
+}

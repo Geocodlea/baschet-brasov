@@ -4,9 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function FilterCard(props) {
   return (
-    <div id={props.id} data-type={props.dataType} className={classes.container}>
+    <div
+      id={props.id}
+      data-type={props.dataType}
+      className={classes.container}
+      style={props.style}
+      onClick={props.onClearFilter}
+    >
       <p>{props.filterText}</p>
-      <FontAwesomeIcon icon={props.icon} onClick={props.onClearFilter} />
+      {!props.style && <FontAwesomeIcon icon={props.icon} />}
     </div>
   );
 }

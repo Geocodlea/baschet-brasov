@@ -102,6 +102,8 @@ export default function SearchCard(props) {
             {(terrainSelected !== "Tip teren" ||
               renovationSelected !== "Status renovare") && (
               <FilterCard
+                style={{ marginLeft: "auto" }}
+                icon={faXmark}
                 onClearFilter={() => {
                   setTerrainSelected("Tip teren");
                   setRenovationSelected("Status renovare");
@@ -109,7 +111,6 @@ export default function SearchCard(props) {
                   setApiStatusSelected("");
                 }}
                 filterText={"Șterge filtrele"}
-                icon={faXmark}
               />
             )}
           </div>

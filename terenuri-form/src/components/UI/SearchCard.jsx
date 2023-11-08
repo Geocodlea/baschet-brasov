@@ -13,8 +13,8 @@ export default function SearchCard(props) {
   const [terrainSelected, setTerrainSelected] = useState("Tip teren");
   const [apiTerrainSelected, setApiTerrainSelected] = useState("");
   const apiTerrain = [
-    { text: "Hard", value: "INDOOR" },
-    { text: "Zgură", value: "OUTDOOR" },
+    { text: "Modular FIBA", value: "INDOOR" },
+    { text: "Tartan", value: "OUTDOOR" },
   ];
 
   const [renovationSelected, setRenovationSelected] =
@@ -100,6 +100,8 @@ export default function SearchCard(props) {
             {(terrainSelected !== "Tip teren" ||
               renovationSelected !== "Status renovare") && (
               <FilterCard
+                style={{ marginLeft: "auto" }}
+                icon={faXmark}
                 onClearFilter={() => {
                   setTerrainSelected("Tip teren");
                   setRenovationSelected("Status renovare");
@@ -107,7 +109,6 @@ export default function SearchCard(props) {
                   setApiStatusSelected("");
                 }}
                 filterText={"Șterge filtrele"}
-                icon={faXmark}
               />
             )}
           </div>

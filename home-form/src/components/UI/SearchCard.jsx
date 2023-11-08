@@ -13,8 +13,8 @@ export default function SearchCard(props) {
   const [terrainSelected, setTerrainSelected] = useState("Tip teren");
   const [apiTerrainSelected, setApiTerrainSelected] = useState("");
   const apiTerrain = [
-    { text: "Hard", value: "INDOOR" },
-    { text: "Zgură", value: "OUTDOOR" },
+    { text: "Modular FIBA", value: "INDOOR" },
+    { text: "Tartan", value: "OUTDOOR" },
   ];
 
   const [renovationSelected, setRenovationSelected] =

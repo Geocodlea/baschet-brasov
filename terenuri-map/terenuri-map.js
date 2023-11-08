@@ -54,8 +54,35 @@ async function initMap() {
         marker.setAttribute("data-state", markerData.renovationStatus);
         marker.setAttribute("id", index);
 
+        marker.setAttribute("data-name", markerData.name);
+        marker.setAttribute("data-lat", markerData.coordinates.latitude);
+        marker.setAttribute("data-lng", markerData.coordinates.longitude);
+
         marker.addEventListener("gmp-click", () => {
-          toggleHighlight(marker);
+          //toggleHighlight(marker);
+
+          const terenName = document.querySelector("#terenModal h3");
+          const terenLink = document.querySelector("#terenModal a");
+
+          terenName.textContent = markerData.name; //markerView.dataset.name;
+          terenLink.href = `/teren?teren=${markerData.name}&lat=${markerData.coordinates.latitude}&lng=${markerData.coordinates.longitude}&type=${markerData.courtType}`; //`/teren?teren=${markerView.dataset.name}&lat=${markerView.dataset.lat}&lng=${markerView.dataset.lng}&type=${markerView.dataset.type}`;
+
+          document.getElementById("terenModal").style.display = "block";
+          document.getElementById("overlay").style.display = "block";
+
+          document
+            .getElementById("closeModal")
+            .addEventListener("click", function () {
+              document.getElementById("terenModal").style.display = "none";
+              document.getElementById("overlay").style.display = "none";
+            });
+
+          document
+            .getElementById("overlay")
+            .addEventListener("click", function () {
+              document.getElementById("terenModal").style.display = "none";
+              document.getElementById("overlay").style.display = "none";
+            });
         });
 
         return marker;
@@ -69,31 +96,52 @@ function toggleHighlight(markerView) {
   if (markerView.content.classList.contains("highlight")) {
     markerView.content.classList.remove("highlight");
 
-    const pin = document.querySelector(`#pin-${markerView.id}`);
-    pin.style.display = "block";
-    const popup = document.querySelector(`#popup-${markerView.id}`);
-    popup.style.display = "none";
+    // const pin = document.querySelector(`#pin-${markerView.id}`);
+    // pin.style.display = "block";
+    // const popup = document.querySelector(`#popup-${markerView.id}`);
+    // popup.style.display = "none";
 
     // Show all other markers
-    createdMarkers.forEach((otherMarker) => {
-      if (otherMarker !== markerView) {
-        otherMarker.content.style.display = "block";
-      }
-    });
+    // createdMarkers.forEach((otherMarker) => {
+    //   if (otherMarker !== markerView) {
+    //     otherMarker.content.style.display = "block";
+    //   }
+    // });
   } else {
     markerView.content.classList.add("highlight");
 
-    const pin = document.querySelector(`#pin-${markerView.id}`);
-    pin.style.display = "none";
-    const popup = document.querySelector(`#popup-${markerView.id}`);
-    popup.style.display = "block";
+    // const pin = document.querySelector(`#pin-${markerView.id}`);
+    // pin.style.display = "none";
+    // const popup = document.querySelector(`#popup-${markerView.id}`);
+    // popup.style.display = "block";
+
+    const terenName = document.querySelector("#terenModal h3");
+    const terenLink = document.querySelector("#terenModal a");
+
+    terenName.textContent = markerView.dataset.name;
+    terenLink.href = `/teren?teren=${markerView.dataset.name}&lat=${markerView.dataset.lat}&lng=${markerView.dataset.lng}&type=${markerView.dataset.type}`;
+
+    document.getElementById("terenModal").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+
+    document
+      .getElementById("closeModal")
+      .addEventListener("click", function () {
+        document.getElementById("terenModal").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+      });
+
+    document.getElementById("overlay").addEventListener("click", function () {
+      document.getElementById("terenModal").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    });
 
     // Hide all other markers
-    createdMarkers.forEach((otherMarker) => {
-      if (otherMarker !== markerView) {
-        otherMarker.content.style.display = "none";
-      }
-    });
+    // createdMarkers.forEach((otherMarker) => {
+    //   if (otherMarker !== markerView) {
+    //     otherMarker.content.style.display = "none";
+    //   }
+    // });
   }
 }
 

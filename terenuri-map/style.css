@@ -39,6 +39,9 @@ select {
 .modal-content {
   text-align: center;
   color: black;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .close {
@@ -58,4 +61,16 @@ select {
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   z-index: 1;
+}
+
+/* Media query for smaller devices */
+@media screen and (max-width: 600px) {
+  .terenModal {
+    /* Adjust font size for smaller devices */
+    width: 90%; /* Adjust the percentage based on your design */
+  }
+
+  .modal-content {
+    font-size: 1rem; /* Adjust the font size for smaller devices */
+  }
 }

@@ -48,14 +48,14 @@ terenTitle.textContent = courtName;
 
 const nerenovatImage = document.querySelector("#nerenovat-image");
 const actualNerenovatImage = new Image();
-actualNerenovatImage.src = `/wp-content/uploads/2023/terenuri/${courtName}/nerenovat.png`;
+actualNerenovatImage.src = `/wp-content/uploads/2023/terenuri/${courtName}/nerenovat.jpg`;
 actualNerenovatImage.addEventListener("load", function () {
   nerenovatImage.src = actualNerenovatImage.src;
 });
 
 const renovatImage = document.querySelector("#renovat-image");
 const actualRenovatImage = new Image();
-actualRenovatImage.src = `/wp-content/uploads/2023/terenuri/${courtName}/renovat.png`;
+actualRenovatImage.src = `/wp-content/uploads/2023/terenuri/${courtName}/renovat.jpg`;
 actualRenovatImage.addEventListener("load", function () {
   renovatImage.src = actualRenovatImage.src;
 });

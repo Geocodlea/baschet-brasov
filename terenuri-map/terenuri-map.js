@@ -127,9 +127,52 @@ const urlMarkers = () => {
   }
 };
 
+const generateTerrains = () => {
+  const terensDiv = document.querySelector("#terenuri-generate");
+  let parte = "";
+
+  markers.forEach((marker, index) => {
+    if (marker.coordinates) {
+      if (index % 2 === 0) {
+        parte = "stanga";
+      } else {
+        parte = "dreapta";
+      }
+
+      const htmlToAppend = `
+      <div class="${parte}">
+        <div class="terenuri">
+          <div style="position: relative">
+            <div class="text-tampa">
+              <span class="teren">Teren</span>
+              <span class="numeteren">${marker.name}</span>
+              <img
+                class="sageata"
+                src="/wp-content/uploads/2023/10/right-arrow-1.png"
+                alt=""
+              />
+            </div>
+            <a
+              href="/teren?teren=${marker.name}&lat=${marker.coordinates.latitude}&lng=${marker.coordinates.longitude}&type=${marker.courtType}"
+              ><img
+                class="tampa"
+                src="/wp-content/uploads/2023/terenuri/${marker.name}/split.png"
+                alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    `;
+
+      terensDiv.innerHTML += htmlToAppend;
+    }
+  });
+};
+
 async function runMapFunctions() {
   await initMap();
   urlMarkers();
+  generateTerrains();
 }
 
 setTimeout(() => {
